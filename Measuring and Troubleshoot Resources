@@ -1,0 +1,45 @@
+CPU and Memory Utilization using Io Stat & SAR
+Memory utilization using free & VMSTAT
+IO Step - SAR & LSOF to talk about disk I/O
+Netstat to talk about netstat I/O and bandwidth
+Talking about the process and figuring out what's running on the system and where - PS - PStree and Top 
+Looking at user Info - i.e who logged into the system and what they are doing - W 
+System availability - uptime shows how long the system has been up and how many users and the system load average for the past 1, 5, and 15 minutes. 
+To find out what packages provides a package binary - yum provides */<packagename>
+Measuring & Troubleshooting 
+   - iostat command  { iostat -c 2  5} - to show the CPU or disk ( -d ) utilization every twosec five times 
+   - sar command - used to collect, report or save system activity.   use sar -d # ls -l /dev | grep "dev202, *" 
+
+To enable a service use -> chconfig sysstat on 
+
+Measuring & Troubleshooting resources usage: 
+ - free command - show us memory usage 
+ - vmstat command - shows memory usage {virtuall memeory statistics}
+- disk information using lsof command - lsof -u user {chekcing the lsof of a particiilar users to get the disk i/o info }
+
+Process management. 
+ps command, ps -e, ps -ef, 
+pstree, pstree -A, pstree -h -p ,pstree -h -p -a 
+top - keyboars hsortcut to change the behaviour - L to remove load average -M memoery - (add/remove columns -F) -B key add ( top 5 process running press n and the number 5 ), K - press K to kill 
+
+Network & Bandwith utilization
+netstat- to display your routing table 
+netstat -r  #shows static table, default gateway
+netstat -s  #from a protocl perspective
+netstat -l<t(cp)><u(dp)> #listening connection - tcp cnnection listening for ssh
+netstat -ln #not to do reverse dns. woud like to see the ip
+netstat -c #conitnuious update 
+
+User information 
+w command
+
+Other Commands - Resources usages
+iotop - while top shows memory and cpu usage, IOtop shows disk usage -{thread id, Priority{Idle,Best Effort & Real Time}, Disk read& write, SWAP, IO -% in min a cpu is waiting to access the disk.
+htop - performance issues
+ss - replaced with netstat 
+iptraf - network stat tool
+
+PREDICT Future Resource Needs using collectd
+COLLECTd
+
+
